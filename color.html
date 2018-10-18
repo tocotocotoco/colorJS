@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+
+<title>雑記とことこ - 慣用色名</title>
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no">
+<style type="text/css"> 
+td {text-align:center;width=100px;font-size: 9px;}
+th {cursor:hand;background-color:#000000;color:#FFFFFF}
+</style>
+
+<header class="global-header">
+<h1 class="page-heading">慣用色名</h1><BR>
+<nav class="nav-page">
+</header>
+
+<section class="block">
+<script language="JavaScript"> 
+<!--
+var x=new Array();
+var nodeArray=new Array();
+var n;
+function init(){
+	n=document.getElementsByTagName('tr').length-1;
+	for(i=0;i<n;i++){
+		nodeArray[i]=document.getElementById("tr"+i);
+	}
+}
+function numericSort(k){
+	for(i=0;i<n;i++){
+		xval=nodeArray[i].childNodes[k].firstChild.nodeValue;
+		x[i]=parseFloat(xval);
+	}
+	sort();
+	show();
+}
+function stringSort(k){
+	for(i=0;i<n;i++){
+		xval=nodeArray[i].childNodes[k].firstChild.nodeValue;
+		x[i]=xval;
+	}
+	sort();
+	show();
+}
+function sort(){
+	complete=false;
+	while(!complete){
+		complete=true;
+		for(i=0;i<n-1;i++){
+			if(x[i]>x[i+1]){
+				buf=x[i];x[i]=x[i+1];x[i+1]=buf;
+				buf=nodeArray[i];nodeArray[i]=nodeArray[i+1];nodeArray[i+1]=buf;
+				complete=false;
+ 
+			}
+		}
+	}
+ 
+}
+function show(){
+	tbody=document.getElementById('tbd1')
+	for(i=0;i<n;i++){
+	tbody.removeChild(nodeArray[i]);
+	}
+	for(i=0;i<n;i++){
+	tbody.appendChild(nodeArray[i]);
+	}
+}
+//-->
+</script>
+</head>
+<body onLoad="init()">
+<center>
+( 慣用色名 or 系統色名をクリックで並び替え )<BR>
+<table id="t1" border="1">
+<thead>
+<tr><th onClick="stringSort(0)">色</th><th onClick="stringSort(1)">慣用色名</th><th onClick="numericSort(2)">マンセル値</th><th onClick="stringSort(3)">系統色名</th><th onClick="stringSort(4)">PCCS</th></tr>
+</thead>                               
+<tbody id="tbd1">
+<tr id="tr0"><td style="BACKGROUND-COLOR: #FFDBED;COLOR: #FFDBED">#FFDBED</td><td>さくらいろ　桜色</td><td>10RP 9/2.5</td><td>ごく薄い紫みの赤</td><td>p24+</td></tr>
+<tr id="tr1"><td style="BACKGROUND-COLOR: #E08899;COLOR: #E08899">#E08899 </td><td>こうばいいろ　紅梅色</td><td>2.5R 6.5/7.5</td><td>やわらかい赤</td><td>lt2+</td></tr>
+<tr id="tr2"><td style="BACKGROUND-COLOR: #FF87A0;COLOR: #FF87A0">#FF87A0 </td><td>さんごいろ　珊瑚色</td><td>2.5R 7/11</td><td>明るい赤</td><td>b2</td></tr>
+<tr id="tr3"><td style="BACKGROUND-COLOR: #A0283A;COLOR: #A0283A">#A0283A </td><td>あかねいろ　茜色</td><td>4R 3.5/11</td><td>こい赤</td><td>dp2</td></tr>
+<tr id="tr4"><td style="BACKGROUND-COLOR: #ED514E;COLOR: #ED514E">#ED514E </td><td>しゅいろ　朱色 </td><td>6R 5.5/14</td><td>あざやかな黄みの赤</td><td>v3</td></tr>
+<tr id="tr5"><td style="BACKGROUND-COLOR: #974E33;COLOR: #974E33">#974E33 </td><td>れんがいろ　煉瓦色 </td><td>10R 4/7</td><td>暗い黄赤</td><td>dk4</td></tr>
+<tr id="tr6"><td style="BACKGROUND-COLOR: #754C38;COLOR: #754C38">#754C38 </td><td>くりいろ　栗色 </td><td>2YR 3.5/4</td><td>暗い灰みの黄赤</td><td>dk4</td></tr>
+<tr id="tr7"><td style="BACKGROUND-COLOR: #FFA500;COLOR: #FFA500">#FFA500 </td><td>やまぶきいろ　山吹色 </td><td>10YR 7.5/13</td><td>あざやかな赤みの黄</td><td>v7</td></tr>
+<tr id="tr8"><td style="BACKGROUND-COLOR: #C18A39;COLOR: #C18A39">#C18A39 </td><td>おうどいろ　黄土色 </td><td>10YR 6/7.5</td><td>くすんだ赤みの黄</td><td>d6</td></tr>
+<tr id="tr9"><td style="BACKGROUND-COLOR: #CDA966;COLOR: #CDA966">#CDA966 </td><td>からしいろ　芥子色 </td><td>3Y 7/6</td><td>やわらかい黄</td><td>sf8</td></tr>
+<tr id="tr10"><td style="BACKGROUND-COLOR: #71714A;COLOR: #71714A">#71714A </td><td>うぐいすいろ　鶯色 </td><td>1GY 4.5/3.5</td><td>くすんだ黄緑</td><td>g10</td></tr>
+<tr id="tr11"><td style="BACKGROUND-COLOR: #96AA3D;COLOR: #96AA3D">#96AA3D </td><td>もえぎ　萌黄 </td><td>4G 6.5/9</td><td>つよい黄緑</td><td>b10</td></tr>
+<tr id="tr12"><td style="BACKGROUND-COLOR: #49A581;COLOR: #49A581">#49A581 </td><td>わかたけいろ　若竹色 </td><td>6G 6/7.5</td><td>つよい緑</td><td>b12</td></tr>
+<tr id="tr13"><td style="BACKGROUND-COLOR: #80AA9F;COLOR: #80AA9F">#80AA9F </td><td>せいじいろ　青磁色 </td><td>7.5G 6.5/4</td><td>やわらかい青みの緑</td><td>sf12</td></tr>
+<tr id="tr14"><td style="BACKGROUND-COLOR: #0087AA;COLOR: #0087AA">#0087AA </td><td>あさぎいろ　浅葱色 </td><td>2.5G 5/8</td><td>あざやかな緑みの青</td><td>b16</td></tr>
+<tr id="tr15"><td style="BACKGROUND-COLOR: #95C0EC;COLOR: #95C0EC">#95C0EC </td><td>そらいろ　空色 </td><td>9B 7.5/5.5</td><td>明るい青</td><td>p16</td></tr>
+<tr id="tr16"><td style="BACKGROUND-COLOR: #2E4B71;COLOR: #2E4B71">#2E4B71 </td><td>あいいろ　藍色 </td><td>2PB 3/5</td><td>暗い青</td><td>dk18</td></tr>
+<tr id="tr17"><td style="BACKGROUND-COLOR: #3451A4;COLOR: #3451A4">#3451A4 </td><td>るりいろ　瑠璃色 </td><td>6PB 3.5/11</td><td>こい紫みの青</td><td>v19</td></tr>
+<tr id="tr18"><td style="BACKGROUND-COLOR: #414FA3;COLOR: #414FA3">#414FA3 </td><td>ぐんじょういろ　群青色 </td><td>7.5PB 3.5/11</td><td>こい紫みの青</td><td>v19</td></tr>
+<tr id="tr19"><td style="BACKGROUND-COLOR: #4A49AD;COLOR: #4A49AD">#4A49AD </td><td>ききょういろ　桔梗色 </td><td>9PB 3.5/13</td><td>こい青紫</td><td>v20</td></tr>
+<tr id="tr20"><td style="BACKGROUND-COLOR: #47384F;COLOR: #47384F">#47384F </td><td>なすこん　茄子紺 </td><td>7.5P 2.5/2.5</td><td>ごく暗い紫</td><td>dk22</td></tr>
+<tr id="tr21"><td style="BACKGROUND-COLOR: #C27BC8;COLOR: #C27BC8">#C27BC8 </td><td>あやめいろ　菖蒲色 </td><td>10P 6/10</td><td>明るい赤みの紫</td><td>b22</td></tr>
+<tr id="tr22"><td style="BACKGROUND-COLOR: #C24DAE;COLOR: #C24DAE">#C24DAE </td><td>ぼたんいろ　牡丹色 </td><td>3RP 5/14</td><td>あざやかな赤紫</td><td>v24</td></tr>
+<tr id="tr23"><td style="BACKGROUND-COLOR: #F0E2E0;COLOR: #F0E2E0">#F0E2E0 </td><td>きなりいろ　生成り色 </td><td>10YR 9/1</td><td>赤みを帯びた黄みの白</td><td>offN-3</td></tr>
+<tr id="tr24"><td style="BACKGROUND-COLOR: #83274E;COLOR: #83274E">#83274E </td><td>ワインレッド </td><td>10RP 3/9</td><td>こい紫みの赤</td><td>dp24</td></tr>
+<tr id="tr25"><td style="BACKGROUND-COLOR: #55353B;COLOR: #55353B">#55353B </td><td>ボルドー </td><td>2.5R 2.5/3</td><td>ごく暗い赤</td><td>dkg2</td></tr>
+<tr id="tr26"><td style="BACKGROUND-COLOR: #BE1E3E;COLOR: #BE1E3E">#BE1E3E </td><td>カーマイン </td><td>4R 4/14</td><td>あざやかな赤</td><td>v2</td></tr>
+<tr id="tr27"><td style="BACKGROUND-COLOR: #ED514E;COLOR: #ED514E">#ED514E </td><td>バーミリオン </td><td>6R 5.5/14</td><td>あざやかな黄みの赤</td><td>v3</td></tr>
+<tr id="tr28"><td style="BACKGROUND-COLOR: #DE4335;COLOR: #DE4335">#DE4335 </td><td>スカーレット </td><td>7R 5/14</td><td>あざやかな黄みの赤</td><td>v3</td></tr>
+<tr id="tr29"><td style="BACKGROUND-COLOR: #FFA594;COLOR: #FFA594">#FFA594 </td><td>サーモンピンク </td><td>8R 7.5/7.5</td><td>やわらかい黄みの赤</td><td>lt4+</td></tr>
+<tr id="tr30"><td style="BACKGROUND-COLOR: #52372F;COLOR: #52372F">#52372F </td><td>チョコレート </td><td>10R 2.5/2.5</td><td>ごく暗い黄赤</td><td>dkg4</td></tr>
+<tr id="tr31"><td style="BACKGROUND-COLOR: #EBC0AF;COLOR: #EBC0AF">#EBC0AF </td><td>ピーチ </td><td>13YR 8/3.5</td><td>明るい灰みの黄赤</td><td>p8+</td></tr>
+<tr id="tr32"><td style="BACKGROUND-COLOR: #FFA000;COLOR: #FFA000">#FFA000 </td><td>マリーゴールド</td><td>7.5YR 7/10</td><td>あざやかな赤みの黄</td><td>v6</td></tr>
+<tr id="tr33"><td style="BACKGROUND-COLOR: #C1AB96;COLOR: #C1AB96">#C1AB96 </td><td>ベージュ</td><td>10YR 7/2.5</td><td>明るい灰みの赤みを帯びた黄</td><td>ltg6</td></tr>
+<tr id="tr34"><td style="BACKGROUND-COLOR: #4A3B2A;COLOR: #4A3B2A">#4A3B2A </td><td>セピア</td><td>10YR 2.5/2</td><td>ごく暗い赤みの黄</td><td>dkg6</td></tr>
+<tr id="tr35"><td style="BACKGROUND-COLOR: #9A753A;COLOR: #9A753A">#9A753A </td><td>カーキー</td><td>1YR 5/5.5</td><td>くすんだ赤みの黄</td><td>dk8</td></tr>
+<tr id="tr36"><td style="BACKGROUND-COLOR: #E3B466;COLOR: #E3B466">#E3B466 </td><td>ブロンド</td><td>2Y 7.5/7</td><td>やわらかい黄</td><td>sf8</td></tr>
+<tr id="tr37"><td style="BACKGROUND-COLOR: #E8D5AF;COLOR: #E8D5AF">#E8D5AF </td><td>クリームイエロー</td><td>5Y 8.5/3.5</td><td>ごくうすい黄</td><td>p8+</td></tr>
+<tr id="tr38"><td style="BACKGROUND-COLOR: #F7D54E;COLOR: #F7D54E">#F7D54E </td><td>カナリヤ</td><td>7Y 8.5/10</td><td>明るい緑みの黄</td><td>v9</td></tr>
+<tr id="tr39"><td style="BACKGROUND-COLOR: #605627;COLOR: #605627">#605627 </td><td>オリーブ</td><td>7.5Y 3.5/4</td><td>暗い緑みの黄</td><td>dk8</td></tr>
+<tr id="tr40"><td style="BACKGROUND-COLOR: #E8C800;COLOR: #E8C800">#E8C800 </td><td>レモンイエロー</td><td>8Y 8/12</td><td>あざやかな緑みの黄</td><td>v8</td></tr>
+<tr id="tr41"><td style="BACKGROUND-COLOR: #565838;COLOR: #565838">#565838 </td><td>オリーブグリーン</td><td>2.5G 3.5/3</td><td>暗い灰みの黄緑</td><td>g10(dk10)</td></tr>
+<tr id="tr42"><td style="BACKGROUND-COLOR: #5DC288;COLOR: #5DC288">#5DC288 </td><td>コバルトグリーン</td><td>4G 7/9</td><td>明るい緑</td><td>b12</td></tr>
+<tr id="tr43"><td style="BACKGROUND-COLOR: #4DA573;COLOR: #4DA573">#4DA573 </td><td>エメラルドグリーン</td><td>4G 6/8</td><td>つよい緑</td><td>b12</td></tr>
+<tr id="tr44"><td style="BACKGROUND-COLOR: #156F5C;COLOR: #156F5C">#156F5C </td><td>ビリジアン</td><td>8G 4/6</td><td>くすんだ青みの緑</td><td>d12</td></tr>
+<tr id="tr45"><td style="BACKGROUND-COLOR: #399ECC;COLOR: #399ECC">#399ECC </td><td>ターコイズブルー</td><td>5B 6/8</td><td>明るい緑みの青</td><td>b16</td></tr>
+<tr id="tr46"><td style="BACKGROUND-COLOR: #005175;COLOR: #005175">#005175 </td><td>マリンブルー</td><td>5B 3/7</td><td>こい緑みの青</td><td>dp16</td></tr>
+<tr id="tr47"><td style="BACKGROUND-COLOR: #219DDD;COLOR: #219DDD">#219DDD </td><td>シアン</td><td>7.5B 6/10</td><td>明るい青</td><td>v16</td></tr>
+<tr id="tr48"><td style="BACKGROUND-COLOR: #95C0EC;COLOR: #95C0EC">#95C0EC </td><td>スカイブルー</td><td>9B 7.5/5.5</td><td>こ明るい青</td><td>lt16+</td></tr>
+<tr id="tr49"><td style="BACKGROUND-COLOR: #ABBDDA;COLOR: #ABBDDA">#ABBDDA </td><td>ベビーブルー</td><td>10B 7.5/3</td><td>明るい灰みの青</td><td>p18+</td></tr>
+<tr id="tr50"><td style="BACKGROUND-COLOR: #2863AB;COLOR: #2863AB">#2863AB </td><td>コバルトブルー</td><td>3PB 4/10</td><td>あざやかな青</td><td>v18</td></tr>
+<tr id="tr51"><td style="BACKGROUND-COLOR: #333C5E;COLOR: #333C5E">#333C5E </td><td>ネービーブルー</td><td>6PB 2.5/4</td><td>暗い紫みの青</td><td>dk18</td></tr>
+<tr id="tr52"><td style="BACKGROUND-COLOR: #414FA3;COLOR: #414FA3">#414FA3 </td><td>ウルトラマリンブルー</td><td>7.5PB 3.5/11</td><td>こい紫みの青</td><td>v19(v20)</td></tr>
+<tr id="tr53"><td style="BACKGROUND-COLOR: #6D52AB;COLOR: #6D52AB">#6D52AB </td><td>バイオレット</td><td>2.5P 4/11</td><td>あざやかな青紫</td><td>v21</td></tr>
+<tr id="tr54"><td style="BACKGROUND-COLOR: #9E8EAE;COLOR: #9E8EAE">#9E8EAE </td><td>ラベンダー</td><td>5P 6/3</td><td>灰みの青みを帯びた紫</td><td>sf22</td></tr>
+<tr id="tr55"><td style="BACKGROUND-COLOR: #835FA8;COLOR: #835FA8">#835FA8 </td><td>モーブ</td><td>5P 4.5/9</td><td>つよい青みの紫</td><td>v22(b22)</td></tr>
+<tr id="tr56"><td style="BACKGROUND-COLOR: #A260BF;COLOR: #A260BF">#A260BF </td><td>パープル</td><td>7.5P 5/12</td><td>あざやかな紫</td><td>b22</td></tr>
+<tr id="tr57"><td style="BACKGROUND-COLOR: #C949A2;COLOR: #C949A2">#C949A2 </td><td>マゼンタ</td><td>5RP 5/14</td><td>あざやかな赤紫</td><td>v24</td></tr>
+<tr id="tr58"><td style="BACKGROUND-COLOR: #E3D4CA;COLOR: #E3D4CA">#E3D4CA </td><td>アイボリー</td><td>2.5Y 8.5/1.5</td><td>黄みのうすい灰色</td><td>ltg8</td></tr>
+<tr id="tr59"><td style="BACKGROUND-COLOR: #A0A0A0;COLOR: #A0A0A0">#A0A0A0 </td><td>シルバーグレイ</td><td>N6.5</td><td>明るい灰色</td><td>Gy-5.5</td></tr>
+<tr id="tr60"><td style="BACKGROUND-COLOR: #4E4854;COLOR: #4E4854">#4E4854 </td><td>チャコールグレイ</td><td>5P 3/1</td><td>紫みの暗い灰色</td><td>Gy-3.0</td></tr>
+<tr id="tr61"><td style="BACKGROUND-COLOR: #F9A1D0;COLOR: #F9A1D0">#F9A1D0 </td><td>ときいろ　鴇色</td><td>7RP 7.5/8</td><td>明るい紫みの赤</td><td>lt24+</td></tr>
+<tr id="tr62"><td style="BACKGROUND-COLOR: #E3557F;COLOR: #E3557F">#E3557F </td><td>からくれない　韓紅花</td><td>1.5R 5.5/13</td><td>あざやかな赤</td><td>b2</td></tr>
+<tr id="tr63"><td style="BACKGROUND-COLOR: #974B52;COLOR: #974B52">#974B52 </td><td>すおう　蘇芳</td><td>4R 4/7</td><td>くすんだ赤</td><td>d2</td></tr>
+<tr id="tr64"><td style="BACKGROUND-COLOR: #7D483E;COLOR: #7D483E">#7D483E </td><td>とびいろ　鳶色</td><td>7.5R 3.5/5</td><td>暗い黄みの赤</td><td>dk4</td></tr>
+<tr id="tr65"><td style="BACKGROUND-COLOR: #8A4031;COLOR: #8A4031">#8A4031 </td><td>べんがらいろ 弁柄色</td><td>8R 3.5/7</td><td>暗い黄みの赤</td><td>dk4</td></tr>
+<tr id="tr66"><td style="BACKGROUND-COLOR: #6D3D33;COLOR: #6D3D33">#6D3D33 </td><td>えびちゃ 海老茶</td><td>8R 3/4.5</td><td>暗い黄みの赤</td><td>dk4</td></tr>
+<tr id="tr67"><td style="BACKGROUND-COLOR: #EF6D3E;COLOR: #EF6D3E">#EF6D3E </td><td>おうに 黄丹</td><td>10R 6/12</td><td>つよい黄赤</td><td>b4</td></tr>
+<tr id="tr68"><td style="BACKGROUND-COLOR: #8A604F;COLOR: #8A604F">#8A604F </td><td>ひわだいろ 桧皮色</td><td>1YR 4.3/4</td><td>暗い灰みの黄赤</td><td>g4</td></tr>
+<tr id="tr69"><td style="BACKGROUND-COLOR: #BA6432;COLOR: #BA6432">#BA6432 </td><td>たいしゃ 代赭</td><td>2.5R 5/8.5</td><td>くすんだ黄赤</td><td>d4</td></tr>
+<tr id="tr70"><td style="BACKGROUND-COLOR: #FFA75E;COLOR: #FFA75E">#FFA75E </td><td>こうじいろ 柑子色</td><td>5.5R 7.5/9</td><td>明るい黄赤</td><td>b6</td></tr>
+<tr id="tr71"><td style="BACKGROUND-COLOR: #C67400;COLOR: #C67400">#C67400 </td><td>こはくいろ 琥珀色</td><td>8YR 5.5/6.5</td><td>くすんだ赤みの黄</td><td>d6</td></tr>
+<tr id="tr72"><td style="BACKGROUND-COLOR: #897868;COLOR: #897868">#897868 </td><td>くちばいろ 朽葉色</td><td>10YR 5/2</td><td>灰みの赤みを帯びた黄</td><td>g6</td></tr>
+<tr id="tr73"><td style="BACKGROUND-COLOR: #FCAC00;COLOR: #FCAC00">#FCAC00 </td><td>うこんいろ 鬱金色</td><td>2Y 7.5/12</td><td>つよい黄</td><td>v7</td></tr>
+<tr id="tr74"><td style="BACKGROUND-COLOR: #EED67E;COLOR: #EED67E">#EED67E </td><td>かりやすいろ　刈安色</td><td>7Y 8.5/7</td><td>うすい緑みの黄</td><td>lt8+</td></tr>
+<tr id="tr75"><td style="BACKGROUND-COLOR: #D9CB65;COLOR: #D9CB65">#D9CB65 </td><td>きはだいろ　黄蘗色</td><td>9Y 8/8</td><td>明るい黄緑</td><td>lt10+</td></tr>
+<tr id="tr76"><td style="BACKGROUND-COLOR: #736F55;COLOR: #736F55">#736F55 </td><td>みるいろ　海松色</td><td>9.5Y 4.5/2.5</td><td>暗い灰みの黄緑</td><td>g10</td></tr>
+<tr id="tr77"><td style="BACKGROUND-COLOR: #C2C05C;COLOR: #C2C05C">#C2C05C </td><td>ひわいろ　鶸色</td><td>1GY 7.5/8</td><td>つよい黄緑</td><td>b10</td></tr>
+<tr id="tr78"><td style="BACKGROUND-COLOR: #357C4C;COLOR: #357C4C">#357C4C </td><td>ときわいろ　常磐色</td><td>3G 4.5/7</td><td>こい緑</td><td>dp12</td></tr>
+<tr id="tr79"><td style="BACKGROUND-COLOR: #5F836D;COLOR: #5F836D">#5F836D </td><td>ろくしょう　緑青色</td><td>4G 5/4</td><td>くすんだ緑</td><td>d12</td></tr>
+<tr id="tr80"><td style="BACKGROUND-COLOR: #244344;COLOR: #244344">#244344 </td><td>てついろ　鉄色</td><td>2.5BG 2.5/2.5</td><td>ごく暗い青緑</td><td>dk14</td></tr>
+<tr id="tr81"><td style="BACKGROUND-COLOR: #69AAC6;COLOR: #69AAC6">#69AAC6 </td><td>しんばしいろ　新橋色</td><td>2.5B 6.5/5.5</td><td>明るい緑みの青</td><td>lt16+</td></tr>
+<tr id="tr82"><td style="BACKGROUND-COLOR: #166A88;COLOR: #166A88">#166A88 </td><td>なんどいろ　納戸色</td><td>4B 4/6</td><td>つよい緑みの青</td><td>v16</td></tr>
+<tr id="tr83"><td style="BACKGROUND-COLOR: #8CB4CE;COLOR: #8CB4CE">#8CB4CE </td><td>かめのぞき　瓶覗</td><td>4.5B 7/4</td><td>やわらかい緑みの青</td><td>ltg16</td></tr>
+<tr id="tr84"><td style="BACKGROUND-COLOR: #3C639B;COLOR: #3C639B">#3C639B </td><td>はなだいろ　縹色</td><td>3PB 4/7.5</td><td>つよい青</td><td>d18</td></tr>
+<tr id="tr85"><td style="BACKGROUND-COLOR: #A09BD8;COLOR: #A09BD8">#A09BD8 </td><td>ふじいろ　藤色</td><td>10PB 6.5/6.5</td><td>明るい青紫</td><td>lt20+</td></tr>
+<tr id="tr86"><td style="BACKGROUND-COLOR: #5F4C86;COLOR: #5F4C86">#5F4C86 </td><td>えどむらさき　江戸紫</td><td>3P 3.5/7</td><td>こい青みの紫</td><td>d20</td></tr>
+<tr id="tr87"><td style="BACKGROUND-COLOR: #775686;COLOR: #775686">#775686 </td><td>こだいむらさき　古代紫</td><td>7.5P 4/6</td><td>くすんだ紫</td><td>d22</td></tr>
+<tr id="tr88"><td style="BACKGROUND-COLOR: #A0A0A0;COLOR: #A0A0A0">#A0A0A0 </td><td>ぎんねず　銀鼠</td><td>N6.5</td><td>明るい灰色</td><td>Gy-6.5</td></tr>
+<tr id="tr89"><td style="BACKGROUND-COLOR: #9F9190;COLOR: #9F9190">#9F9190 </td><td>ちゃねずみ　茶鼠</td><td>5YR 6/1</td><td>黄赤みの灰色</td><td>ltg6+</td></tr>
+<tr id="tr90"><td style="BACKGROUND-COLOR: #787C7A;COLOR: #787C7A">#787C7A </td><td>りきゅうねずみ　利休鼠</td><td>2.5G 5/1</td><td>緑みの灰色</td><td>g12</td></tr>
+<tr id="tr91"><td style="BACKGROUND-COLOR: #605448;COLOR: #605448">#605448 </td><td>すすたけいろ　煤竹色</td><td>9.5YR 3.5/1.5</td><td>赤みを帯びた黄みの暗い灰色</td><td>dkg6</td></tr>
+<tr id="tr92"><td style="BACKGROUND-COLOR: #C97F96;COLOR: #C97F96">#C97F96 </td><td>オールドローズ</td><td>1R 6/6.5</td><td>やわらかい赤</td><td>sf2</td></tr>
+<tr id="tr93"><td style="BACKGROUND-COLOR: #DD4157;COLOR: #DD4157">#DD4157 </td><td>ポピーレッド</td><td>4R 5/14</td><td>やわらかい赤</td><td>v2</td></tr>
+<tr id="tr94"><td style="BACKGROUND-COLOR: #682A2B;COLOR: #682A2B">#682A2B </td><td>マルーン</td><td>5R 2.5/6</td><td>暗い赤</td><td>dk2</td></tr>
+<tr id="tr95"><td style="BACKGROUND-COLOR: #AC5647;COLOR: #AC5647">#AC5647 </td><td>テラコッタ</td><td>7.5R 4.5/8</td><td>くすんだ黄みの赤</td><td>d2</td></tr>
+<tr id="tr96"><td style="BACKGROUND-COLOR: #FF5D20;COLOR: #FF5D20">#FF5D20 </td><td>チャイニーズレッド</td><td>10R 6/15</td><td>あざやかな黄赤</td><td>v4</td></tr>
+<tr id="tr97"><td style="BACKGROUND-COLOR: #A8593C;COLOR: #A8593C">#A8593C </td><td>バーントシェンナ</td><td>10R 4.5/7.5</td><td>くすんだ黄赤</td><td>d4</td></tr>
+<tr id="tr98"><td style="BACKGROUND-COLOR: #BB6421;COLOR: #BB6421">#BB6421 </td><td>ローシェンナ</td><td>4YR 5/9</td><td>つよい黄赤</td><td>dp6</td></tr>
+<tr id="tr99"><td style="BACKGROUND-COLOR: #A56F3F;COLOR: #A56F3F">#A56F3F </td><td>タン</td><td>6YR 5/6</td><td>くすんだ黄赤</td><td>d6</td></tr>
+<tr id="tr100"><td style="BACKGROUND-COLOR: #F8CFAE;COLOR: #F8CFAE">#F8CFAE </td><td>エクルベイジュ</td><td>7.5YR 8.5/4</td><td>うすい赤みの黄</td><td>p6+</td></tr>
+<tr id="tr101"><td style="BACKGROUND-COLOR: #F39A38;COLOR: #F39A38">#F39A38 </td><td>ゴールデンイエロー</td><td>7.5YR 7/10</td><td>つよい赤みの黄</td><td>b6</td></tr>
+<tr id="tr102"><td style="BACKGROUND-COLOR: #B37D40;COLOR: #B37D40">#B37D40 </td><td>アンバー</td><td>8YR 5.5/6.5</td><td>くすんだ赤みの黄</td><td>d6</td></tr>
+<tr id="tr103"><td style="BACKGROUND-COLOR: #5B462A;COLOR: #5B462A">#5B462A </td><td>バーントアンバー</td><td>10YR 3/3</td><td>ごく暗い赤みの黄</td><td>dkg6</td></tr>
+<tr id="tr104"><td style="BACKGROUND-COLOR: #F2C26B;COLOR: #F2C26B">#F2C26B </td><td>ネープルスイエロー</td><td>2.5R 8/7.5</td><td>つよい黄</td><td>lt8+</td></tr>
+<tr id="tr105"><td style="BACKGROUND-COLOR: #7F5C13;COLOR: #7F5C13">#7F5C13 </td><td>ローアンバー</td><td>2.5Y 4/6</td><td>暗い黄</td><td>dk8</td></tr>
+<tr id="tr106"><td style="BACKGROUND-COLOR: #FFCC00;COLOR: #FFCC00">#FFCC00 </td><td>ジョンブリアン</td><td>5Y 8.5/14</td><td>あざやかな黄</td><td>v8</td></tr>
+<tr id="tr107"><td style="BACKGROUND-COLOR: #BDD458;COLOR: #BDD458">#BDD458 </td><td>シャトルーズグリーン</td><td>4GY 8/10</td><td>明るい黄緑</td><td>b10</td></tr>
+<tr id="tr108"><td style="BACKGROUND-COLOR: #879D4E;COLOR: #879D4E">#879D4E </td><td>リーフグリーン</td><td>5GY 6/7</td><td>つよい黄緑</td><td>d10</td></tr>
+<tr id="tr109"><td style="BACKGROUND-COLOR: #737C3E;COLOR: #737C3E">#737C3E </td><td>グラスグリーン</td><td>5GY 5/5</td><td>くすんだ黄緑</td><td>d10</td></tr>
+<tr id="tr110"><td style="BACKGROUND-COLOR: #B0D3A8;COLOR: #B0D3A8">#B0D3A8 </td><td>アップルグリーン</td><td>10GY 8/5</td><td>やわらかい黄みの緑</td><td>lt12+</td></tr>
+<tr id="tr111"><td style="BACKGROUND-COLOR: #81CC91;COLOR: #81CC91">#81CC91 </td><td>ミントグリーン</td><td>2.5GY 7.5/8</td><td>明るい緑</td><td>b12</td></tr>
+<tr id="tr112"><td style="BACKGROUND-COLOR: #008047;COLOR: #008047">#008047 </td><td>マカライトグリーン</td><td>4G 4.5/9</td><td>こい緑</td><td>dp12</td></tr>
+<tr id="tr113"><td style="BACKGROUND-COLOR: #264435;COLOR: #264435">#264435 </td><td>ボトルグリーン</td><td>5G 2.5/3</td><td>ごく暗い緑</td><td>dkg12</td></tr>
+<tr id="tr114"><td style="BACKGROUND-COLOR: #007F91;COLOR: #007F91">#007F91 </td><td>ピーコックグリーン</td><td>7.5BG 4.5/9</td><td>あざやかな青緑</td><td>v14</td></tr>
+<tr id="tr115"><td style="BACKGROUND-COLOR: #5190A4;COLOR: #5190A4">#5190A4 </td><td>ナイルブルー</td><td>10BG 5.5/5</td><td>くすんだ青緑</td><td>sf16</td></tr>
+<tr id="tr116"><td style="BACKGROUND-COLOR: #0B74AF;COLOR: #0B74AF">#0B74AF </td><td>セルリアンブルー</td><td>9B 4.5/9</td><td>あざやかな青</td><td>v17</td></tr>
+<tr id="tr117"><td style="BACKGROUND-COLOR: #00152D;COLOR: #00152D">#00152D </td><td>ミッドナイトブルー</td><td>5PB 1.5/2</td><td>ごく暗い紫みの青</td><td>dkg18</td></tr>
+<tr id="tr118"><td style="BACKGROUND-COLOR: #776ED2;COLOR: #776ED2">#776ED2 </td><td>ウイスタリア</td><td>10PB 5/12</td><td>あざやかな青紫</td><td>b20</td></tr>
+<tr id="tr119"><td style="BACKGROUND-COLOR: #C2A2DA;COLOR: #C2A2DA">#C2A2DA </td><td>ライラック</td><td>6P 7/6</td><td>やわらかい紫</td><td>lt22+</td></tr>
+<tr id="tr120"><td style="BACKGROUND-COLOR: #56555E;COLOR: #56555E">#56555E </td><td>スレートグレイ</td><td>2.5PB 3.5/0.5</td><td>暗い灰色</td><td>g18</td></tr>
+<tr id="tr121"><td style="BACKGROUND-COLOR: #1C1C1C;COLOR: #1C1C1C">#1C1C1C </td><td>ランプブラック</td><td>N1</td><td>暗い灰色</td><td>Bk</td></tr>
+</tbody>
+</table>
+</center>
+
+<h1 class="block-heading">慣用色名一覧</h1>
+<p class="comment">
+色やPCCS値は参考値です。正確ではありませんのでご注意下さい。
+</p>
+</section>
+
+
+<a href="http://tocotocotoco.at.webry.info/201212/article_2.html"><img src="tocotoco_banar.gif" alt="戻る"></a>
+<footer class="global-footer">
+
+ <p class="copyright"><small>Copyright&copy;2009 tocotoco All rights reserved.</small></p>
+</footer>
+
+</body>
+</html>
